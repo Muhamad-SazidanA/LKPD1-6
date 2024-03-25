@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD 6</title>
+</head>
+<body>
+    <script>
+            //Start No 1 Juara Kelas
+            function cariJuara (siswa) {
+            var juara = null;
+            
+            for (var i = 0; i < siswa.length; i++) {
+                var nilaiTotal = siswa[i].nilai.MTK + siswa[i].nilai.INDO + siswa[i].nilai.INGG + siswa[i].nilai.DPK + siswa[i].nilai.Agama;
+                var rataRata = nilaiTotal /5;
+                if (rataRata >= 95 && siswa[i].kehadiran === '100%') {
+            if (juara === null || rataRata > juara.rataRata) {
+                juara = {
+                    nama: siswa[i].nama,
+                    rataRata: rataRata
+                };
+            }
+        }
+    }
+
+            if (juara !== null) {
+                console.log("Juara kelas adalah " + juara.nama + " dengan rata-rata nilai " + juara.rataRata);
+            } else {
+                console.log("Tidak ada siswa yang memenuhi kriteria juara kelas.");
+            }
+        }
+
+            var siswa = [
+                { nama: '1', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '2', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '3', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '4', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '5', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '6', nilai: { MTK: 100, INDO: 100, INGG: 100, DPK: 100, Agama: 100 }, kehadiran: '100%' },
+                { nama: '7', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '8', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '9', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '10', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '11', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '12', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '13', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '14', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+                { nama: '15', nilai: { MTK: 96, INDO: 89, INGG: 81, DPK: 78, Agama: 87 }, kehadiran: '100%' },
+            ];
+
+            cariJuara(siswa);
+             //End No 1 Juara Kelas
+
+             //Start No 2 Juara Kelas
+            const jumlahTiketPerKelas = 50;
+
+            let tiketTerjualVIP = 40;
+            let tiketTerjualEksekutif = 43;
+            let tiketTerjualEkonomi = 35;
+
+            const hargaTiketVIP = 50000 * tiketTerjualVIP;
+            const hargaTiketEksekutif = 40000 * tiketTerjualEksekutif;
+            const hargaTiketEkonomi = 30000 * tiketTerjualEkonomi;
+
+            let keuntunganVIP, keuntunganEksekutif, keuntunganEkonomi;
+
+            if (tiketTerjualVIP >= 35) {
+                keuntunganVIP = hargaTiketVIP * (25 / 100);
+            } else if (tiketTerjualVIP >= 20 && tiketTerjualVIP < 35) {
+                keuntunganVIP = hargaTiketVIP * (15 / 100);
+            } else {
+                keuntunganVIP = hargaTiketVIP * (5 / 100);
+            }
+
+            if (tiketTerjualEksekutif >= 40) {
+                keuntunganEksekutif = hargaTiketEksekutif * (20 / 100);
+            } else if (tiketTerjualEksekutif >= 20 && tiketTerjualEksekutif < 40) { 
+                keuntunganEksekutif = hargaTiketEksekutif * (10 / 100);
+            } else {
+                keuntunganEksekutif = hargaTiketEksekutif * (2 / 100);
+            }
+
+            keuntunganEkonomi = hargaTiketEkonomi * (7 / 100);
+
+            let totalKeuntungan = keuntunganVIP + keuntunganEksekutif + keuntunganEkonomi;
+            let totalHargaTiket = hargaTiketVIP + hargaTiketEksekutif + hargaTiketEkonomi;
+            let totalTiket = tiketTerjualVIP + tiketTerjualEksekutif + tiketTerjualEkonomi;
+
+            console.log(`Keuntungan kelas VIP adalah Rp${keuntunganVIP}`);
+            console.log(`Keuntungan kelas Eksekutif adalah Rp${keuntunganEksekutif}`)
+            console.log(`Keuntungan kelas Ekonomi adalah Rp${keuntunganEkonomi}`)
+            console.log(`Keuntungan secara keseluruhan adalah Rp${totalKeuntungan}`)
+            console.log(`Total harga tiket dari seluruh kelas adalah Rp${totalHargaTiket}`)
+            console.log(`Jumlah tiket per kelas adalah ${jumlahTiketPerKelas}`)
+            console.log(`Total tiket dari seluruh kelas adalah ${totalTiket}`)
+            //End No 2 Juara Kelas
+    </script>
+             
+</body>
+</html>

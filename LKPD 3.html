@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD 3</title>
+</head>
+<body> 
+    <script>
+        //Start No 1 Diskon
+        let harga = 50000
+
+        let diskon = 50000*5/100
+        let hargasetdiskon = harga-diskon
+
+        console.log(`Harga Sebelum Diskon Adalah ${harga} Besaran Diskon ${diskon} Harga Setelah Diskon Adalah ${hargasetdiskon}`)
+        //End No 1 Diskon
+
+        //Start No 2 Input Bilangan Bulat
+        let bil = 1234567
+        let satuan = bil % 10
+        let puluhan = Math.floor (bil / 10) % 10
+        let ratusan = Math.floor (bil / 100) % 10
+
+        console.log (`Bilangan ${satuan} Satuan, ${puluhan} Puluhan, dan ${ratusan} Ratusan`)
+        //End No 2 Input Bilangan Bulat
+
+        //Start No 3 Cuaca
+        let farenheit = 700
+        let celcius = (farenheit - 32) * 5/9
+
+        if (celcius > 300){
+            console.log (`PANAS ${celcius}`)
+        }else if (celcius < 250){
+            console.log (`DINGIN ${celcius}`)
+        }else {
+            console.log (`NORMAL ${celcius}`)
+        }
+        //End No 3 Cuaca 
+    </script>
+</body>
+</html>

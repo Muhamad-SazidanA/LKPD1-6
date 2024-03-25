@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD 5</title>
+</head>
+<body>
+    <script>
+        //Start No 1 looping for
+        for (let z = 1; z <= 50; z++ ) {
+            console.log(`data ke ${z}`)
+        }
+        //Start No 1 looping for
+
+        //Start No 2 Cetak Bilangan Ganjil looping for
+        for (let a = 1;a <= 50;a++)
+        if (a % 2 == 1){
+            console.log(`${a} Bilangan Ganjil`)
+        }
+        //End No 2 Cetak Bilangan Ganjil looping for
+
+        //Start No 3 Cetak Bilangan Genap looping for
+        for (let b = 1;b <= 50;b++)
+        if (b % 2 == 0){
+            console.log(`${b} Bilangan Genap`)
+        }
+        //End No 3 Cetak Bilangan Genap looping for
+
+        //Start No 4 Cetak Bilangan Ganjil-Genap looping while
+        let c = 1
+        while (c <= 10) {
+            if (c % 2 == 1){
+            console.log(`${c} Bilangan Ganjil`)}
+            else{
+            console.log(`${c} Bilangan Genap`)
+        }c++;
+        }
+        //End No 4 Cetak Bilangan Ganjil-Genap looping while
+        
+        //Start No 5 Input Bilangan Terkecil,Terbesar,Rata-Rata
+        let total = 0;
+        let tertinggi = 0; 
+        let terendah = 0;
+        for (let a = 1; a <= 20; a++){
+            bil = parseInt(prompt("Input bilangan (Hanya angka)"));
+            if (bil > tertinggi){
+                tertinggi = bil
+            } else {
+                tertinggi = tertinggi
+                if (bil < terendah) {
+                    terendah = bil
+                } else {
+                    terendah = terendah
+                }
+            }
+            total = total + bil
+        }
+        rata = total / 20
+
+        document.write (`${tertinggi} tertinggi ${terendah} terendah ${total} total ${rata} rata-rata`)
+        //Start No 5 Input Bilangan Terkecil,Terbesar,Rata-Rata
+    </script>
+</body>
+</html>

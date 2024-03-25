@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD 4</title>
+</head>
+<body>
+    <script>
+        //Start No 1 Nilai Rata-Rata
+        let PABP = 70
+        let MTK = 82
+        let DPK = 77
+        let RataRata = (PABP + MTK + DPK) / 3
+        
+        if (RataRata >= 80 && RataRata <= 100 ){
+            console.log ("A")
+        }else if (RataRata >= 75 && RataRata < 80 ){
+            console.log ("B")
+        }else if (RataRata >= 65 && RataRata < 75){
+            console.log ("C")
+        }else if (RataRata >= 45 && RataRata < 65){
+            console.log ("D")
+        }else if (RataRata >= 0 && RataRata < 45){
+            console.log ("E")
+        }else {
+            console.log ("K")
+        }
+        //End No 1 Nilai Rata-Rata
+
+        //Start No 2 Pegawai
+        let pegawai = 22505197803
+        let no = pegawai % 100
+        let thn = Math.floor (pegawai/100)%10000
+        let bln = Math.floor (pegawai/1000000)%100
+        let tnggl = Math.floor (pegawai/100000000)%100
+        let golng = Math.floor (pegawai/10000000000)
+         
+        switch (bln) {
+                case 1 :
+                bln = "Januari"
+                break 
+                case 2 :
+                bln = "Februari"
+                break 
+                case 3 :
+                bln = "Maret"
+                break 
+                case 4 :
+                bln = "April"
+                break 
+                case 5 :
+                bln = "Mei"
+                break 
+                case 6 :
+                bln = "Juni"
+                break 
+                case 7 :
+                bln = "Juli"
+                break 
+                case 8 :
+                bln = "Agustus"
+                break 
+                case 9 :
+                bln = "September"
+                break 
+                case 10 :
+                bln = "Oktober"
+                break 
+                case 11 :
+                bln = "November"
+                break 
+                case 12 :
+                bln = "Desember"
+                break 
+            }
+
+            console.log (golng,tnggl,bln,thn,no)
+        //End No 2 Pegawai
+
+        //Start No 3 Waktu Dalam Bentuk hh:mm:ss
+        function tambahsatudetik (waktu) {
+            let[Jam, Menit, Detik] = waktu.split(':').map(Number)
+            if (Detik < 59){
+                Detik += 1
+            }else {
+                Detik = 0
+                if (Menit < 59) {
+                    Menit += 1
+                }else {
+                    Menit = 0
+                    if (Jam < 23){
+                        Jam += 1
+                    }else {
+                        Jam = 0
+                    }
+                }
+            }
+           
+            return `${Jam.toString().padStart(2, '0')}:${Menit.toString().padStart(2, '0')}:${Detik.toString().padStart(2, '0')}`;      
+        }
+
+        let waktu1 = '02:13:23'
+        let waktu2 = '02:13:59'
+        let waktu3 = '02:59:59'
+        let waktu4 = '23:59:59'
+
+        
+        console.log(`Setelah penambahan 1 detik: ${tambahsatudetik(waktu1)}`)
+        console.log(`Setelah penambahan 1 detik: ${tambahsatudetik(waktu2)}`)
+        console.log(`Setelah penambahan 1 detik: ${tambahsatudetik(waktu3)}`)
+        console.log(`Setelah penambahan 1 detik: ${tambahsatudetik(waktu4)}`)
+        //End No 3 Waktu Dalam Bentuk hh:mm:ss
+    </script>
+</body>
+</html>
